@@ -26,7 +26,7 @@ export function HeroSection() {
         stagger: 0.02,
         ease: "expo.out",
         delay: 0.2,
-        force3D: true, // Hardware acceleration on karega (No Lag)
+        force3D: true, // Hardware acceleration on karega
       });
 
       return () => {
@@ -44,10 +44,10 @@ export function HeroSection() {
       <HeroBackground />
       
       <div className="z-10 flex w-full max-w-5xl flex-col items-center text-center">
+        {/* Yahan se text-balance aur will-change-transform hata diya gaya hai */}
         <h1
           ref={textRef}
-          // will-change-transform lagaya hai taki GPU direct handle kare
-          className="text-balance text-4xl font-bold tracking-tighter [clip-path:polygon(0_0,100%_0,100%_120%,0_120%)] sm:text-6xl md:text-8xl lg:text-9xl will-change-transform"
+          className="text-4xl font-bold tracking-tighter [clip-path:polygon(0_0,100%_0,100%_120%,0_120%)] sm:text-6xl md:text-8xl lg:text-9xl"
         >
           Crafting Digital Excellence.
         </h1>
@@ -56,7 +56,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
-          className="mt-6 max-w-xl text-base font-medium text-muted-foreground sm:text-lg md:text-xl will-change-transform"
+          className="mt-6 max-w-xl text-base font-medium text-muted-foreground sm:text-lg md:text-xl"
         >
           Elite Full Stack Developer & UI Designer. Building high-performance, 
           pixel-perfect web experiences that scale.
