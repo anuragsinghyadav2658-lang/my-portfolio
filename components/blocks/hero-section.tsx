@@ -14,9 +14,7 @@ export function HeroSection() {
     () => {
       if (!textRef.current) return;
 
-      // Break text into characters for a precise, staggering reveal
       const text = new SplitType(textRef.current, { types: "chars,words" });
-
       gsap.set(text.chars, { y: 100, opacity: 0 });
 
       const tl = gsap.timeline();
@@ -27,39 +25,39 @@ export function HeroSection() {
         duration: 1.2,
         stagger: 0.02,
         ease: "expo.out",
-        delay: 0.2, // Small delay allows the initial page load to settle
+        delay: 0.2,
       });
 
       return () => {
-        text.revert(); // Cleanup SplitType DOM mutations on unmount
+        text.revert();
       };
     },
-    { scope: container },
+    { scope: container }
   );
 
   return (
     <section
       ref={container}
-      className="relative flex min-h-screen w-full flex-col items-center justify-center px-6 md:px-12"
+      className="relative flex min-h-screen w-full flex-col items-center justify-center px-4 sm:px-6 md:px-12"
     >
       <HeroBackground />
-
-      <div className="z-10 flex max-w-5xl flex-col items-center text-center">
-        {/* clip-path prevents characters from being visible before they translate up */}
+      
+      <div className="z-10 flex w-full max-w-5xl flex-col items-center text-center">
+        {/* Adjusted starting size to text-4xl for strict mobile boundary safety */}
         <h1
           ref={textRef}
-          className="text-balance text-5xl font-bold tracking-tighter [clip-path:polygon(0_0,100%_0,100%_120%,0_120%)] sm:text-7xl md:text-8xl lg:text-9xl"
+          className="text-balance text-4xl font-bold tracking-tighter [clip-path:polygon(0_0,100%_0,100%_120%,0_120%)] sm:text-6xl md:text-8xl lg:text-9xl"
         >
           Crafting Digital Excellence.
         </h1>
-
+        
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
-          className="mt-6 max-w-2xl text-lg font-medium text-muted-foreground sm:text-xl"
+          className="mt-6 max-w-xl text-base font-medium text-muted-foreground sm:text-lg md:text-xl"
         >
-          Elite Full Stack Developer & UI Designer. Building high-performance,
+          Elite Full Stack Developer & UI Designer. Building high-performance, 
           pixel-perfect web experiences that scale.
         </motion.p>
       </div>

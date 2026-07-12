@@ -45,8 +45,11 @@ export function CustomCursor() {
 
   return (
     <motion.div
-      className="pointer-events-none fixed left-0 top-0 z-[100] hidden h-8 w-8 rounded-full bg-white mix-blend-difference md:block"
-      style={{ x: smoothX, y: smoothY }}
+      // 1. Removed 'mix-blend-difference'
+      // 2. Added 'bg-white/70 backdrop-blur-sm' for a premium glass look
+      className="pointer-events-none fixed left-0 top-0 z-[100] hidden h-8 w-8 rounded-full bg-white/70 backdrop-blur-sm md:block shadow-lg"
+      // 3. Added willChange: "transform" to force GPU Hardware Acceleration
+      style={{ x: smoothX, y: smoothY, willChange: "transform" }}
       animate={{
         scale: isHovering ? 1.5 : 1,
         opacity: 1,
