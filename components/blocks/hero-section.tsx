@@ -26,6 +26,7 @@ export function HeroSection() {
         stagger: 0.02,
         ease: "expo.out",
         delay: 0.2,
+        force3D: true, // Hardware acceleration on karega (No Lag)
       });
 
       return () => {
@@ -38,15 +39,15 @@ export function HeroSection() {
   return (
     <section
       ref={container}
-      className="relative flex min-h-screen w-full flex-col items-center justify-center px-4 sm:px-6 md:px-12"
+      className="relative flex min-h-screen w-full flex-col items-center justify-center px-4 sm:px-6 md:px-12 overflow-hidden"
     >
       <HeroBackground />
       
       <div className="z-10 flex w-full max-w-5xl flex-col items-center text-center">
-        {/* Adjusted starting size to text-4xl for strict mobile boundary safety */}
         <h1
           ref={textRef}
-          className="text-balance text-4xl font-bold tracking-tighter [clip-path:polygon(0_0,100%_0,100%_120%,0_120%)] sm:text-6xl md:text-8xl lg:text-9xl"
+          // will-change-transform lagaya hai taki GPU direct handle kare
+          className="text-balance text-4xl font-bold tracking-tighter [clip-path:polygon(0_0,100%_0,100%_120%,0_120%)] sm:text-6xl md:text-8xl lg:text-9xl will-change-transform"
         >
           Crafting Digital Excellence.
         </h1>
@@ -55,7 +56,7 @@ export function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
-          className="mt-6 max-w-xl text-base font-medium text-muted-foreground sm:text-lg md:text-xl"
+          className="mt-6 max-w-xl text-base font-medium text-muted-foreground sm:text-lg md:text-xl will-change-transform"
         >
           Elite Full Stack Developer & UI Designer. Building high-performance, 
           pixel-perfect web experiences that scale.
