@@ -9,8 +9,25 @@ import { SmoothScrollProvider } from "@/components/providers/smooth-scroll";
 import { Navbar } from "@/components/layout/navbar";
 
 export const metadata: Metadata = {
-  title: "Your Name | Elite Full Stack Developer & UI Designer",
-  description: "Portfolio of Your Name, specializing in premium web experiences.",
+  metadataBase: new URL("https://my-portfolio-eight-theta-32.vercel.app"),
+  title: "Anurag Yadav | Elite Full Stack Developer & UI Designer",
+  description: "Portfolio of Anurag Yadav, specializing in premium web experiences.",
+  openGraph: {
+    title: "Anurag Yadav | Elite Full Stack Developer",
+    description: "Building high-performance, pixel-perfect web experiences that scale.",
+    url: "/",
+    siteName: "Anurag Yadav Portfolio",
+    images: [
+      {
+        url: "/og-image.png", // Ye wahi image hai jo public folder me dali hai
+        width: 1200,
+        height: 630,
+        alt: "Anurag Yadav Portfolio Preview",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
