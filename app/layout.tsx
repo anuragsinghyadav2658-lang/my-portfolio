@@ -6,7 +6,6 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll";
-import { CustomCursor } from "@/components/layout/custom-cursor";
 import { Navbar } from "@/components/layout/navbar";
 
 export const metadata: Metadata = {
@@ -34,13 +33,6 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <SmoothScrollProvider>
-            <CustomCursor />
-            <Navbar />
-            <main className="relative flex min-h-screen flex-col overflow-hidden pt-20">
-              {children}
-            </main>
-          </SmoothScrollProvider>
         </ThemeProvider>
       </body>
     </html>
