@@ -35,7 +35,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SmoothScrollProvider>
-            {/* <CustomCursor /> */}
+            <CustomCursor />
             <Navbar />
             <main className="relative flex min-h-screen flex-col overflow-hidden pt-20">
               {children}
