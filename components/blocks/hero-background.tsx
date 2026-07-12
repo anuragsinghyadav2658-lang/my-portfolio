@@ -8,7 +8,7 @@ export function HeroBackground() {
       {/* Subtle Dot Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(var(--foreground),0.05)_1px,transparent_1px)] bg-[size:24px_24px] opacity-50" />
 
-      {/* Animated Mesh Gradient Blobs */}
+      {/* Animated Mesh Gradient Blobs (will-change-transform added for GPU boost) */}
       <motion.div
         animate={{
           scale: [1, 1.2, 1],
@@ -16,7 +16,7 @@ export function HeroBackground() {
           opacity: [0.1, 0.15, 0.1],
         }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-        className="absolute -left-[10%] -top-[20%] h-[70vw] w-[70vw] rounded-full bg-muted-foreground/20 blur-[120px]"
+        className="absolute -left-[10%] -top-[20%] h-[70vw] w-[70vw] rounded-full bg-muted-foreground/20 blur-[100px] will-change-transform"
       />
       <motion.div
         animate={{
@@ -25,11 +25,11 @@ export function HeroBackground() {
           opacity: [0.1, 0.12, 0.1],
         }}
         transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        className="absolute -bottom-[20%] -right-[10%] h-[60vw] w-[60vw] rounded-full bg-foreground/10 blur-[120px]"
+        className="absolute -bottom-[20%] -right-[10%] h-[60vw] w-[60vw] rounded-full bg-foreground/10 blur-[100px] will-change-transform"
       />
 
-      {/* Glassmorphism overlay to keep it extremely subdued */}
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-[50px]" />
+      {/* Lag Fix: backdrop-blur hata diya gaya hai. Sirf dark overlay bacha hai. */}
+      <div className="absolute inset-0 bg-background/80" />
     </div>
   );
 }
