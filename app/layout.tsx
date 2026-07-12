@@ -33,6 +33,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <SmoothScrollProvider>
+            <Navbar />
+            {children}
+          </SmoothScrollProvider>
         </ThemeProvider>
       </body>
     </html>
