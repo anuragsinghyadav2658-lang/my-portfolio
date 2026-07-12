@@ -45,7 +45,7 @@ export function Navbar() {
         )}
       >
         <Link href="/" className="text-sm font-semibold tracking-tight z-50">
-          YOUR NAME.
+          ANURAG YADAV.
         </Link>
 
         {/* Desktop Nav */}
