@@ -1,7 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  AnimatePresence,
+} from "framer-motion";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -21,7 +26,7 @@ export function Navbar() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
     setIsScrolled(latest > 50);
-    
+
     // Don't hide navbar if mobile menu is open
     if (latest > 150 && latest > previous && !isMobileMenuOpen) {
       setHidden(true);
@@ -41,14 +46,16 @@ export function Navbar() {
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className={cn(
           "fixed inset-x-0 top-0 z-50 flex h-20 items-center justify-between px-4 transition-colors duration-300 sm:px-6 md:px-12",
-          isScrolled || isMobileMenuOpen ? "bg-background/80 backdrop-blur-md" : "bg-transparent"
+          isScrolled || isMobileMenuOpen
+            ? "bg-background/80 backdrop-blur-md"
+            : "bg-transparent",
         )}
       >
         <Link href="/" className="text-sm font-semibold tracking-tight z-50">
           ANURAG YADAV.
         </Link>
 
-                {/* Desktop Nav */}
+        {/* Desktop Nav */}
         <nav className="hidden gap-8 md:flex">
           {navLinks.map((link) => (
             <Link
@@ -57,12 +64,11 @@ export function Navbar() {
               className="group relative text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.name}
-              {/* Added premium underline reveal on hover */}
-              <span className="absolute -bottom-1 left-0 h-[1px] w-0 bg-foreground transition-all duration-300 ease-out group-hover:w-full" />
+              {/* Advanced Hover: Draws L-to-R, Exits L-to-R */}
+              <span className="absolute -bottom-1 left-0 h-[1px] w-full origin-right scale-x-0 bg-foreground transition-transform duration-300 ease-out group-hover:origin-left group-hover:scale-x-100" />
             </Link>
           ))}
         </nav>
-
 
         {/* Mobile Toggle */}
         <button
@@ -70,7 +76,11 @@ export function Navbar() {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle Menu"
         >
-          {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          {isMobileMenuOpen ? (
+            <X className="h-5 w-5" />
+          ) : (
+            <Menu className="h-5 w-5" />
+          )}
         </button>
       </motion.header>
 
