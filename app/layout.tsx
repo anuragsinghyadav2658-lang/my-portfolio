@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Anurag Yadav Portfolio",
     images: [
       {
-        url: "/og-image.png", // Ye wahi image hai jo public folder me dali hai
+        url: "/og-image.png.png", // Ye wahi image hai jo public folder me dali hai
         width: 1200,
         height: 630,
         alt: "Anurag Yadav Portfolio Preview",
