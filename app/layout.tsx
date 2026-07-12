@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: "/",
     siteName: "Anurag Yadav Portfolio",
     images: [
-      {
+      { 
         url: "/og-image.png", // Ye wahi image hai jo public folder me dali hai
         width: 1200,
         height: 630,
