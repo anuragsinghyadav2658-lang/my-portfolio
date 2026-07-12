@@ -48,18 +48,21 @@ export function Navbar() {
           ANURAG YADAV.
         </Link>
 
-        {/* Desktop Nav */}
+                {/* Desktop Nav */}
         <nav className="hidden gap-8 md:flex">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="group relative text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
             >
               {link.name}
+              {/* Added premium underline reveal on hover */}
+              <span className="absolute -bottom-1 left-0 h-[1px] w-0 bg-foreground transition-all duration-300 ease-out group-hover:w-full" />
             </Link>
           ))}
         </nav>
+
 
         {/* Mobile Toggle */}
         <button

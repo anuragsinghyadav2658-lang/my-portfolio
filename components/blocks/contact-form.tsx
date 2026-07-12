@@ -16,7 +16,7 @@ type FormData = z.infer<typeof formSchema>;
 
 export function ContactForm() {
   const [isSuccess, setIsSuccess] = useState(false);
-  
+
   const {
     register,
     handleSubmit,
@@ -32,7 +32,7 @@ export function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
-      
+
       if (res.ok) setIsSuccess(true);
     } catch (error) {
       console.error("Submission failed", error);
@@ -43,7 +43,9 @@ export function ContactForm() {
     return (
       <div className="flex h-full flex-col items-center justify-center space-y-4 rounded-xl border border-border bg-muted/20 p-8 text-center">
         <h3 className="text-2xl font-semibold">Message Sent</h3>
-        <p className="text-muted-foreground">I'll get back to you within 24 hours.</p>
+        <p className="text-muted-foreground">
+          I'll get back to you within 24 hours.
+        </p>
       </div>
     );
   }
@@ -56,7 +58,9 @@ export function ContactForm() {
           placeholder="Your Name"
           className="w-full border-b border-border bg-transparent px-0 py-3 text-base outline-none transition-colors focus:border-foreground placeholder:text-muted-foreground"
         />
-        {errors.name && <span className="text-sm text-red-500">{errors.name.message}</span>}
+        {errors.name && (
+          <span className="text-sm text-red-500">{errors.name.message}</span>
+        )}
       </div>
 
       <div className="flex flex-col gap-2">
@@ -66,7 +70,9 @@ export function ContactForm() {
           placeholder="Email Address"
           className="w-full border-b border-border bg-transparent px-0 py-3 text-base outline-none transition-colors focus:border-foreground placeholder:text-muted-foreground"
         />
-        {errors.email && <span className="text-sm text-red-500">{errors.email.message}</span>}
+        {errors.email && (
+          <span className="text-sm text-red-500">{errors.email.message}</span>
+        )}
       </div>
 
       <div className="flex flex-col gap-2">
@@ -76,16 +82,26 @@ export function ContactForm() {
           rows={4}
           className="w-full resize-none border-b border-border bg-transparent px-0 py-3 text-base outline-none transition-colors focus:border-foreground placeholder:text-muted-foreground"
         />
-        {errors.message && <span className="text-sm text-red-500">{errors.message.message}</span>}
+        {errors.message && (
+          <span className="text-sm text-red-500">{errors.message.message}</span>
+        )}
       </div>
 
       <button
         type="submit"
         disabled={isSubmitting}
-        className="group mt-4 flex w-fit items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-transform hover:scale-105 disabled:opacity-50"
+        // Removed hover:scale-105 and added a smoother active scale down state
+        className="group mt-4 flex w-fit items-center gap-2 rounded-full bg-foreground px-6 py-3 text-sm font-medium text-background transition-all duration-300 ease-out hover:bg-foreground/90 active:scale-95 disabled:opacity-50 shadow-[0_0_0_0_rgba(255,255,255,0.1)] hover:shadow-[0_0_20px_0_rgba(255,255,255,0.2)]"
       >
-        {isSubmitting ? <Loader2 className="h-4 w-4 animate-spin" /> : "Send Message"}
-        {!isSubmitting && <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />}
+        {isSubmitting ? (
+          <Loader2 className="h-4 w-4 animate-spin" />
+        ) : (
+          "Send Message"
+        )}
+        {/* Adjusted arrow translate to be slightly softer */}
+        {!isSubmitting && (
+          <ArrowRight className="h-4 w-4 transition-transform duration-300 ease-out group-hover:translate-x-1" />
+        )}
       </button>
     </form>
   );
