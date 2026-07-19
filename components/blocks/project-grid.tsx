@@ -51,10 +51,10 @@ export function ProjectGrid() {
               transition={{ duration: 0.6, delay: i % 2 === 0 ? 0 : 0.2, ease: "easeOut" }}
               className="w-full"
             >
-              <Link href={`/work/${project.id}`} className="group relative flex w-full flex-col gap-4 md:gap-5 cursor-pointer">
+              <Link href="#" className="group relative flex w-full flex-col gap-4 md:gap-5 cursor-pointer">
                 <div className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-muted">
                                     <Image
-                    src={project.image}
+                    src={project.image} 
                     alt={project.title}
                     fill
                     // Changed duration to 500 for a snappier, yet smooth effect

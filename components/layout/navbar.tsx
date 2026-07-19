@@ -12,10 +12,11 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { name: "Work", href: "/work" },
-  { name: "About", href: "/about" },
-  { name: "Contact", href: "/contact" },
+  { name: "Work", href: "#work" },
+  { name: "About", href: "#about" },
+  { name: "Contact", href: "#contact" },
 ];
+
 
 export function Navbar() {
   const { scrollY } = useScroll();
