@@ -57,4 +57,4 @@ export function CustomCursor() {
       transition={{ type: "tween", duration: 0.15, ease: "easeOut" }}
     />
   );
-}
+} 
