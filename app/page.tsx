@@ -3,6 +3,7 @@ import { ProjectGrid } from "@/components/blocks/project-grid";
 import { ExperienceSection } from "@/components/blocks/experience-section";
 import { Footer } from "@/components/layout/footer";
 import { SkillsSection } from "@/components/blocks/skills-section";
+import { UpcomingProjects } from "@/components/blocks/upcoming-projects";
 
 export default function HomePage() {
   return (
@@ -13,7 +14,7 @@ export default function HomePage() {
       <SkillsSection />
       <ExperienceSection />
 
-      {/* TODO: UpcomingProjects yahan aayega */}
+      <UpcomingProjects />
 
       <Footer />
     </div>
