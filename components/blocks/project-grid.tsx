@@ -34,7 +34,7 @@ export function ProjectGrid() {
               <div className="group relative flex w-full flex-col gap-4 md:gap-5">
                 {/* Image Section */}
                 <Link
-                  href={project.liveUrl}
+                  href={`/projects/${project.id}`}
                   className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-muted block cursor-pointer"
                 >
                   <Image
