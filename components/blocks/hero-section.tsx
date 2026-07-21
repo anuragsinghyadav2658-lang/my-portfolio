@@ -33,7 +33,7 @@ export function HeroSection() {
         text.revert();
       };
     },
-    { scope: container }
+    { scope: container },
   );
 
   return (
@@ -42,7 +42,7 @@ export function HeroSection() {
       className="relative flex min-h-screen w-full flex-col items-center justify-center px-4 sm:px-6 md:px-12 overflow-hidden"
     >
       {/* <HeroBackground /> */}
-      
+
       <div className="z-10 flex w-full max-w-5xl flex-col items-center text-center">
         <h1
           ref={textRef}
@@ -51,15 +51,16 @@ export function HeroSection() {
         >
           Crafting Digital Excellence.
         </h1>
-        
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.5, ease: "easeOut" }}
           className="mt-6 max-w-xl text-base font-medium text-muted-foreground sm:text-lg md:text-xl will-change-transform"
         >
-          Elite Full Stack Developer & UI Designer. Building high-performance, 
-          pixel-perfect web experiences that scale.
+          Passionate Full Stack Developer focused on writing clean, responsive
+          code and creating intuitive user interfaces. Always learning, always
+          building.
         </motion.p>
       </div>
     </section>
