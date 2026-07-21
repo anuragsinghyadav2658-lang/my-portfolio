@@ -7,18 +7,21 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll";
 import { Navbar } from "@/components/layout/navbar";
+import { ScrollProgress } from "@/components/animations/scroll-progress";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://my-portfolio-eight-theta-32.vercel.app"),
   title: "Anurag Yadav | Elite Full Stack Developer & UI Designer",
-  description: "Portfolio of Anurag Yadav, specializing in premium web experiences.",
+  description:
+    "Portfolio of Anurag Yadav, specializing in premium web experiences.",
   openGraph: {
     title: "Anurag Yadav | Elite Full Stack Developer",
-    description: "Building high-performance, pixel-perfect web experiences that scale.",
+    description:
+      "Building high-performance, pixel-perfect web experiences that scale.",
     url: "/",
     siteName: "Anurag Yadav Portfolio",
     images: [
-      { 
+      {
         url: "/og-image.png", // Ye wahi image hai jo public folder me dali hai
         width: 1200,
         height: 630,
@@ -41,7 +44,7 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-sans text-foreground",
           GeistSans.variable,
-          GeistMono.variable
+          GeistMono.variable,
         )}
       >
         <ThemeProvider
@@ -52,6 +55,7 @@ export default function RootLayout({
         >
           <SmoothScrollProvider>
             <Navbar />
+            <ScrollProgress />
             {children}
           </SmoothScrollProvider>
         </ThemeProvider>
