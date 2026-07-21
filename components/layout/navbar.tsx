@@ -13,10 +13,10 @@ import { cn } from "@/lib/utils";
 
 const navLinks = [
   { name: "Work", href: "#work" },
+  { name: "Skills", href: "#skills" },
   { name: "About", href: "#about" },
   { name: "Contact", href: "#contact" },
 ];
-
 
 export function Navbar() {
   const { scrollY } = useScroll();
