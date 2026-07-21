@@ -28,7 +28,7 @@ const experiences = [
 
 export function ExperienceSection() {
   return (
-    <section className="w-full max-w-7xl px-6 py-24 md:px-12 lg:py-32">
+    <section id="about" className="w-full max-w-7xl px-6 py-24 md:px-12 lg:py-32">
       <div className="grid grid-cols-1 gap-16 lg:grid-cols-12 lg:gap-8">
         
         {/* Left Column: Sticky About Text */}
