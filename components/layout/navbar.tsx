@@ -29,6 +29,22 @@ export function Navbar() {
 
   useEffect(() => setMounted(true), []);
 
+  const handleScroll = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    href: string,
+  ) => {
+    // Sirf # wale links ke liye smooth scroll chalega
+    if (href.startsWith("#")) {
+      e.preventDefault();
+      const targetId = href.substring(1);
+      const elem = document.getElementById(targetId);
+      if (elem) {
+        // Elite smooth behavior
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
     setIsScrolled(latest > 50);
@@ -68,10 +84,10 @@ export function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleScroll(e, link.href)}
                 className="group relative text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
               >
                 {link.name}
-                {/* Advanced Hover: Draws L-to-R, Exits L-to-R */}
                 <span className="absolute -bottom-1 left-0 h-[1px] w-full origin-right scale-x-0 bg-foreground transition-transform duration-300 ease-out group-hover:origin-left group-hover:scale-x-100" />
               </Link>
             ))}
@@ -155,7 +171,10 @@ export function Navbar() {
                 <Link
                   key={link.name}
                   href={link.href}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    handleScroll(e, link.href);
+                    setIsMobileMenuOpen(false);
+                  }}
                   className="text-4xl font-bold tracking-tight text-foreground transition-colors active:text-muted-foreground"
                 >
                   {link.name}
