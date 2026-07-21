@@ -7,7 +7,6 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll";
 import { Navbar } from "@/components/layout/navbar";
-import { CustomCursor } from "@/components/layout/custom-cursor";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://my-portfolio-eight-theta-32.vercel.app"),
@@ -53,7 +52,6 @@ export default function RootLayout({
         >
           <SmoothScrollProvider>
             <Navbar />
-            <CustomCursor />
             {children}
           </SmoothScrollProvider>
         </ThemeProvider>
@@ -61,4 +59,3 @@ export default function RootLayout({
     </html>
   );
 }
-
