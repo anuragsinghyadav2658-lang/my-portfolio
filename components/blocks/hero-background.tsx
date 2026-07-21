@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export function HeroBackground() {
   return (
-    <div className="absolute inset-0 -z-10 overflow-hidden bg-background">
+    <div id="work" className="absolute inset-0 -z-10 overflow-hidden bg-background">
       {/* Subtle Dot Grid */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(var(--foreground),0.05)_1px,transparent_1px)] bg-[size:24px_24px] opacity-50" />
 

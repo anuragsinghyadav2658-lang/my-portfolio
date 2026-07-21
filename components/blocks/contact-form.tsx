@@ -41,7 +41,7 @@ export function ContactForm() {
 
   if (isSuccess) {
     return (
-      <div className="flex h-full flex-col items-center justify-center space-y-4 rounded-xl border border-border bg-muted/20 p-8 text-center">
+      <div id="contact" className="flex h-full flex-col items-center justify-center space-y-4 rounded-xl border border-border bg-muted/20 p-8 text-center">
         <h3 className="text-2xl font-semibold">Message Sent</h3>
         <p className="text-muted-foreground">
           I'll get back to you within 24 hours.
