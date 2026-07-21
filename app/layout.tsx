@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll";
 import { Navbar } from "@/components/layout/navbar";
 import { ScrollProgress } from "@/components/animations/scroll-progress";
+import { ScrollToTop } from "@/components/animations/scroll-to-top";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://my-portfolio-eight-theta-32.vercel.app"),
@@ -57,6 +58,7 @@ export default function RootLayout({
             <Navbar />
             <ScrollProgress />
             {children}
+            <ScrollToTop />
           </SmoothScrollProvider>
         </ThemeProvider>
       </body>
