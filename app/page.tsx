@@ -9,8 +9,6 @@ export default function HomePage() {
     <div className="flex w-full flex-col items-center">
       <HeroSection />
 
-      {/* TODO: SkillsSection yahan aayega */}
-
       <ProjectGrid />
       <SkillsSection />
       <ExperienceSection />
