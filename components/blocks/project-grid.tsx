@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
 import { Magnetic } from "@/components/animations/magnetic";
 import { projectsData } from "../../lib/constants";
@@ -34,16 +34,19 @@ export function ProjectGrid() {
               <div className="group relative flex w-full flex-col gap-4 md:gap-5">
                 {/* Image Section */}
                 <Link
-                  href={`/projects/${project.id}`}
-                  className="relative aspect-[4/3] w-full overflow-hidden rounded-xl bg-muted block cursor-pointer"
+                  href={project.liveUrl}
+                  target="_blank"
+                  className="relative aspect-video w-full overflow-hidden rounded-xl bg-muted block cursor-pointer"
                 >
                   <Image
                     src={project.image}
                     alt={project.title}
                     fill
+                    quality={100}
                     className="object-cover transition-transform duration-500 ease-out md:group-hover:scale-[1.04]"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
+
                   <div className="absolute inset-0 bg-background/0 transition-colors duration-500 md:group-hover:bg-background/10" />
 
                   <div className="absolute right-4 top-4 md:right-6 md:top-6 flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-background/90 text-foreground shadow-xl backdrop-blur-md transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] scale-100 opacity-100 md:scale-75 md:opacity-0 md:group-hover:scale-100 md:group-hover:opacity-100 md:group-hover:rotate-45">
@@ -63,7 +66,7 @@ export function ProjectGrid() {
                       </p>
                     </div>
 
-                    {/* GitHub & Live Links */}
+                    {/* GitHub Link Only */}
                     <div className="flex items-center gap-2">
                       <Link
                         href={project.githubUrl}
@@ -85,13 +88,6 @@ export function ProjectGrid() {
                           <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.24c3-.34 6-1.53 6-6.76a5.2 5.2 0 0 0-1.5-3.5 4.1 4.1 0 0 0 .1-3.4s-1.2-.4-3.9 1.4a12.3 12.3 0 0 0-7 0C6 2.7 4.8 3.1 4.8 3.1a4.1 4.1 0 0 0 .1 3.4A5.2 5.2 0 0 0 3 10.5c0 5.22 3 6.42 6 6.76-.8.7-1.1 2-1.1 3.24v4"></path>
                           <path d="M3 19s2 1 4 1"></path>
                         </svg>
-                      </Link>
-                      <Link
-                        href={project.liveUrl}
-                        target="_blank"
-                        className="p-2 text-muted-foreground hover:text-foreground transition-colors rounded-full hover:bg-muted"
-                      >
-                        <ExternalLink className="h-5 w-5" />
                       </Link>
                     </div>
                   </div>
