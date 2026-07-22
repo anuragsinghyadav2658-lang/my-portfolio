@@ -115,7 +115,7 @@ export function Footer() {
       </div>
 
       <div className="mx-auto mt-24 flex max-w-7xl flex-col items-center justify-between gap-4 border-t border-border pt-8 text-sm text-muted-foreground md:flex-row">
-        <p>© {currentYear} Anurag Singh Yadav. All rights reserved.</p>
+        <p>© {currentYear} Anurag Yadav. All rights reserved.</p>
         <p>Built with Next.js & Tailwind</p>
       </div>
     </footer>

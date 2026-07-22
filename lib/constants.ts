@@ -1,12 +1,12 @@
 export const projectsData = [
-  {
+    {
     id: 1,
-    title: "Fintech Dashboard",
-    category: "UI/UX & Frontend",
-    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=2000&auto=format&fit=crop",
-    techStack: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    githubUrl: "#", // Yahan apna GitHub link daal dena
-    liveUrl: "#",   // Yahan live site ka link
+    title: "MediLab AI",
+    category: "AI-Powered Diagnostic Dashboard",
+    image: "/projects/medilab.png",
+    techStack: ["React", "Spring Boot", "MySQL", "Docker"],
+    githubUrl: "https://github.com/anuragsinghyadav2658-lang/medilab-ai-frontend", 
+    liveUrl: "https://medilab-ai-frontend.vercel.app", 
   },
   {
     id: 2,
