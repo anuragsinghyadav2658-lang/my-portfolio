@@ -32,7 +32,7 @@ export const projectsData = [
     id: 4,
     title: "Rock Paper Scissors",
     category: "Interactive Web Game",
-    image: "/projects/rps.png",
+    image: "/projects/RPSgame.png",
     techStack: ["JavaScript", "HTML5", "CSS3"],
     githubUrl: "https://github.com/anuragsinghyadav2658-lang/Rock-Paper-Scissors-game",
     liveUrl: "https://anuragsinghyadav2658-lang.github.io/Rock-Paper-Scissors-game/",
