@@ -2,8 +2,16 @@
 import { motion } from "framer-motion";
 
 const technologies = [
-  "React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", 
-  "MongoDB", "Framer Motion", "GitHub", "PostgreSQL", "Prisma"
+  "Java",
+  "Spring Boot",
+  "React",
+  "Next.js",
+  "MySQL",
+  "TypeScript",
+  "Tailwind CSS",
+  "Docker",
+  "Vercel",
+  "Google APIs",
 ];
 
 export function TechMarquee() {
@@ -20,8 +28,8 @@ export function TechMarquee() {
         }}
       >
         {[...technologies, ...technologies].map((tech, index) => (
-          <span 
-            key={index} 
+          <span
+            key={index}
             className="text-lg font-bold uppercase tracking-wider text-muted-foreground/50 transition-colors hover:text-foreground"
           >
             {tech}
