@@ -9,7 +9,7 @@ import { projectsData } from "../../lib/constants";
 
 export function ProjectGrid() {
   return (
-    <section className="w-full max-w-7xl px-4 py-16 sm:px-6 md:px-12 md:py-24 lg:py-32">
+    <section id="work" className="w-full max-w-7xl px-4 py-16 sm:px-6 md:px-12 md:py-24 lg:py-32">
       <div className="mb-8 md:mb-16 flex flex-col gap-4">
         <h2 className="text-3xl font-bold tracking-tight md:text-5xl">
           Selected Work
