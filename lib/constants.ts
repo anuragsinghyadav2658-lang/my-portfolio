@@ -28,15 +28,13 @@ export const projectsData = [
     githubUrl: "https://github.com/anuragsinghyadav2658-lang/currency-converter-frontend",
     liveUrl: "https://anuragsinghyadav2658-lang.github.io/currency-converter-frontend/",
   },
-  {
+    {
     id: 4,
-    title: "Web3 Protocol",
-    category: "Smart Contracts",
-    // 4th Image ka broken link fix kar diya hai
-    image:
-      "https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=2000&auto=format&fit=crop",
-    techStack: ["Solidity", "Web3.js", "React"],
-    githubUrl: "#",
-    liveUrl: "#",
+    title: "Rock Paper Scissors",
+    category: "Interactive Web Game",
+    image: "/projects/rps.png",
+    techStack: ["JavaScript", "HTML5", "CSS3"],
+    githubUrl: "https://github.com/anuragsinghyadav2658-lang/Rock-Paper-Scissors-game",
+    liveUrl: "https://anuragsinghyadav2658-lang.github.io/Rock-Paper-Scissors-game/",
   },
 ];
